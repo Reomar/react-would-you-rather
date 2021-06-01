@@ -1,9 +1,8 @@
-
+import LoginPage  from './pages/LoginPage'
 function App() {
   return (
-    <div className="App">
-      <h1>Root APP</h1>
-    </div>
+      <LoginPage />
+
   );
 }
 

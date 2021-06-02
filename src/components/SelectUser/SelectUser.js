@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { fetchUsersAction } from "../../store/actionCreator"
+import { fetchUsersAction, loginAction } from "../../store/actionCreator"
 import Select from 'react-select';
+import { Link } from "react-router-dom";
 
 
 
@@ -14,7 +15,7 @@ const SelectUser = () => {
     // Fetch the user data to state
     useEffect(()=>{
         setTimeout(dispatch(fetchUsersAction()), 3000)
-    },[])
+    })
 
     // Get User data form redux
     const usersData = useSelector((state => state.users))
@@ -29,10 +30,12 @@ const SelectUser = () => {
         setSelectedUser(usersData[id])
     }
 
+    const active = useSelector((state) => state.activeUser)
+    console.log(active)
+
     // Handle button Click
     const handleLoginButton = () =>{
-        // TODO dispatch
-        console.log(selectedUser)
+        dispatch(loginAction(selectedUser))
     }
 
     return (
@@ -45,9 +48,10 @@ const SelectUser = () => {
                 placeholder={"Select User..."}
             />
 
-            <button onClick={handleLoginButton} >
+            <Link to='/' onClick={handleLoginButton} >
                 login
-            </button>
+            </Link>
+
         </div>
     )
 }

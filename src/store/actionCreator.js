@@ -1,5 +1,5 @@
 import { _getUsers } from '../_DATA'
-import { FETCH_USERS } from './actions'
+import { FETCH_USERS, LOGIN_USER } from './actions'
 
 /**
  * Users Actions
@@ -18,6 +18,10 @@ export const fetchUsersAction = () => {
 /**
  * Login Actions
  */
+export const loginAction = (usr)=>({
+    type: LOGIN_USER,
+    payload: usr
+})
 
 /**
  * Questions Actions

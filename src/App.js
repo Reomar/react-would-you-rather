@@ -7,6 +7,7 @@ import LoginPage  from './pages/LoginPage'
 
 // Components
 import Navbar from './components/Navbar';
+import HomePage from './pages/HomePage';
 
 function App() {
 
@@ -17,9 +18,9 @@ function App() {
   return (
     <BrowserRouter>
       {activeUser && <Navbar />}
-      
+
       < Route path="/" exact>
-        {!activeUser ?  <LoginPage /> : <h1>Logged in as {activeUser.name}</h1>}
+        {!activeUser ?  <LoginPage /> : <HomePage />}
       </ Route>
     </BrowserRouter>
   );

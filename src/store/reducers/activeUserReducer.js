@@ -1,6 +1,6 @@
 import { LOGIN_USER } from "../actions";
 
-const initialState = {}
+const initialState =  null
 
 export function activeUserReducer (state = initialState, action){
     switch (action.type) {

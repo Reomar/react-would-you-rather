@@ -1,20 +1,19 @@
-import { Provider } from 'react-redux';
-import { store } from './store/store'
 import LoginPage  from './pages/LoginPage'
-import { Route, Router } from 'react-router';
+import { Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
+import { useSelector } from "react-redux"
 
 function App() {
+
+  // Get Active User
+  const activeUser = useSelector((state) => state.activeUser)
+
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        < Route path="/">
-          <LoginPage />
-        </ Route>
-      </BrowserRouter>
-
-    </Provider>
-
+    <BrowserRouter>
+      < Route path="/" exact>
+        {activeUser ? <h1>Logged IN</h1> : <LoginPage />}
+      </ Route>
+    </BrowserRouter>
   );
 }
 

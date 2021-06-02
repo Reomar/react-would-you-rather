@@ -15,6 +15,7 @@ const SelectUser = () => {
     // Fetch the user data to state
     useEffect(()=>{
         setTimeout(dispatch(fetchUsersAction()), 3000)
+
     })
 
     // Get User data form redux
@@ -29,9 +30,6 @@ const SelectUser = () => {
     const handleSelect = (id) => {
         setSelectedUser(usersData[id])
     }
-
-    const active = useSelector((state) => state.activeUser)
-    console.log(active)
 
     // Handle button Click
     const handleLoginButton = () =>{

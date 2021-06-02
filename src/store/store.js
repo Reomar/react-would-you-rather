@@ -5,8 +5,8 @@ import { questionsReducer } from "./reducers/questionsReducer";
 import { usersReducer } from "./reducers/usersReducers";
 
 const reducers = combineReducers({
-    activeUser:activeUserReducer,
-    users:usersReducer,
+    activeUser: activeUserReducer,
+    users: usersReducer,
     questions: questionsReducer,
 })
 

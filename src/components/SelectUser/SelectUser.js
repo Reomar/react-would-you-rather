@@ -1,7 +1,18 @@
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { fetchUsersAction } from "../../store/actionCreator"
 
-function SelectUser(){
+const SelectUser = () => {
+    const dispatch = useDispatch()
 
-    // TODO use useEffect hook to add API data to state
+
+    // Fetch the user data to state
+    useEffect(()=>{
+        dispatch(fetchUsersAction())
+    },[])
+
+    // get User data form redux
+    const usersData = useSelector((state => state.users))
 
     return <div>Select user</div>
 }

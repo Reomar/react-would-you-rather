@@ -1,5 +1,5 @@
 import { _getUsers } from '../_DATA'
-import { FETCH_USERS, LOGIN_USER } from './actions'
+import { FETCH_USERS, LOGIN_USER, LOGOUT_USER } from './actions'
 
 /**
  * Users Actions
@@ -21,6 +21,10 @@ export const fetchUsersAction = () => {
 export const loginAction = (usr)=>({
     type: LOGIN_USER,
     payload: usr
+})
+
+export const logoutAction = () => ({
+    type: LOGOUT_USER
 })
 
 /**

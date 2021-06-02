@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchQuestionsAction } from "../../store/actionCreator"
+import './homepage.sass'
 
 function HomePage(){
     const dispatch = useDispatch()
@@ -31,12 +32,26 @@ function HomePage(){
         }
     })
 
-    console.log('answered' , answered)
-    console.log('notAnswered', notAnswered)
+    const handleFilter = (filter) =>{
+        setDisplay(filter)
+    }
 
     return(
         <div className='homepage-container'>
-            HomePage
+            <div className='question-list-container'>
+                <div className='buttons-container'>
+                    <div className='filter-button-left  button active-button'>
+                        Not Answered Questions
+                    </div>
+
+                    <div className='filter-button-right button'>
+                        Answered Questions
+                    </div>
+                </div>
+
+                <div>Hello</div>
+
+            </div>
         </div>
     )
 }

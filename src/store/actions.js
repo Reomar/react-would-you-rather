@@ -14,3 +14,5 @@ export const FETCH_USERS = 'FETCH_USERS'
 /**
  * Questions Actions
  */
+
+export const FETCH_QUESTIONS = 'FETCH_QUESTIONS'

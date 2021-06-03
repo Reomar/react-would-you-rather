@@ -16,3 +16,9 @@ export const FETCH_USERS = 'FETCH_USERS'
  */
 
 export const FETCH_QUESTIONS = 'FETCH_QUESTIONS'
+
+
+/**
+ * Shared actions
+ */
+export const SAVE_ANSWER = 'SAVE_ANSWER'

@@ -1,5 +1,5 @@
-import { _getUsers, _getQuestions } from '../_DATA'
-import { FETCH_QUESTIONS, FETCH_USERS, LOGIN_USER, LOGOUT_USER } from './actions'
+import { _getUsers, _getQuestions, _saveQuestionAnswer } from '../_DATA'
+import { FETCH_QUESTIONS, FETCH_USERS, LOGIN_USER, LOGOUT_USER, SAVE_ANSWER } from './actions'
 
 /**
  * Users Actions
@@ -36,6 +36,22 @@ export const fetchQuestionsAction = () => {
             dispatch({
                 type: FETCH_QUESTIONS,
                 payload: res
+            })
+        })
+    }
+}
+
+
+/**
+ * Shared Actions
+ */
+
+export const saveAnswerAction = (payload) => {
+    return (dispatch) => {
+        _saveQuestionAnswer(payload).then(() => {
+            dispatch({
+                type: SAVE_ANSWER,
+                payload: payload
             })
         })
     }

@@ -1,13 +1,22 @@
 import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { Link } from 'react-router-dom'
+import { saveAnswerAction } from "../../store/actionCreator"
 
 function SelectAnswer(props){
+    const dispatch = useDispatch()
 
     const [selectedOption, setSelectedOption] = useState('')
 
     const {question} = props
 
-    const handleRadio = (value)=>{
-        setSelectedOption(value)
+    const activeUser = useSelector(state => state.activeUser)
+
+    const handleButton = () => {
+        let authedUser = activeUser.id
+        let qid = question.id
+        let answer = selectedOption
+        dispatch(saveAnswerAction({authedUser, qid, answer}))
     }
     return(
         <div >
@@ -31,6 +40,8 @@ function SelectAnswer(props){
                 />
                 <label htmlFor='option2'>{question.optionTwo.text}</label>
             </div>
+
+            <Link to={'/questions/'+question.id} onClick={handleButton}>Save Answer</Link>
         </div>
 
         

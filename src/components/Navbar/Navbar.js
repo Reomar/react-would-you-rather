@@ -7,7 +7,7 @@ import { logoutAction } from "../../store/actionCreator"
 function Navbar(){
     const dispatch = useDispatch()
 
-    const activeUser = useSelector(state => state.activeUser.activeUserReducer)
+    const activeUser = useSelector(state => state.activeUser)
 
     const handleLogout = ()=>{
         dispatch(logoutAction())

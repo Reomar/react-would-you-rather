@@ -11,7 +11,7 @@ function QuestionPage(){
     const QuestionData = useSelector(state => state.questions)
 
     // Get Active User from redux
-    const activeUser = useSelector(state => state.activeUser.activeUserReducer)
+    const activeUser = useSelector(state => state.activeUser)
 
     // Check if question is answered
     const isAnswered = question_id in activeUser.answers

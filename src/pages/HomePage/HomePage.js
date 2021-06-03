@@ -21,7 +21,7 @@ function HomePage(){
     const questionsData = useSelector(state => state.questions)
 
     // Get user data from redux store
-    const activeUser = useSelector(state => state.activeUser.activeUserReducer)
+    const activeUser = useSelector(state => state.activeUser)
 
     const notAnswered = []
     const answered= []

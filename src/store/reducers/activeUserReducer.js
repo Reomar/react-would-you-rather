@@ -1,13 +1,22 @@
-import { LOGIN_USER, LOGOUT_USER } from "../actions";
+import { LOGIN_USER, LOGOUT_USER, SAVE_ANSWER } from "../actions";
 
 const initialState =  null
 
 export function activeUserReducer (state = initialState, action){
     switch (action.type) {
         case LOGIN_USER:
-            return {activeUserReducer: action.payload}
+            return action.payload
         case LOGOUT_USER:
             return null
+        case SAVE_ANSWER:
+            return {
+                ...state,
+                answers:{
+                    ...state.answers,
+                    [action.payload.qid]: action.payload.answer
+                }
+                
+            }
         default:
             return state
     }

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import img from '../../assets/avatars/a1.png'
 import SelectAnswer from '../SelectAnswer/SelectAnswer'
 import './questionBox.sass'
+import Votes  from '../Votes'
 
 function QuestionBox(props){
     // Question data
@@ -24,6 +25,10 @@ function QuestionBox(props){
 
             {page === 'notAnsweredQuestion' &&
                 < SelectAnswer question={question}/>
+            }
+
+            {page === 'answeredQuestion' &&
+                < Votes />
             }
         </div>
     )

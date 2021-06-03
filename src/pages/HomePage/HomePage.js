@@ -31,9 +31,12 @@ function HomePage(){
         }else{
             notAnswered.push(questionsData[qId])
         }
+        // to turn off warring
+        return 0
     })
 
-    const handleFilter = (filter) =>{
+    // Handle change in display
+    const handleDisplay = (filter) =>{
         setDisplay(filter)
     }
 
@@ -41,17 +44,21 @@ function HomePage(){
         <div className='homepage-container'>
             <div className='question-list-container'>
                 <div className='buttons-container'>
-                    <div className='filter-button-left  button active-button'>
+                    <div className={[display === 'notAnswered' ? 'active-button' : ''] +' filter-button-left button'}  onClick={()=>handleDisplay('notAnswered')}>
                         Not Answered Questions
                     </div>
 
-                    <div className='filter-button-right button'>
+                    <div className={[display === 'answered' ? 'active-button' : ''] +' filter-button-right button'} onClick={()=>handleDisplay('answered')}>
                         Answered Questions
                     </div>
                 </div>
 
                 {display=== 'notAnswered' && notAnswered.map(question => (
-                    < QuestionBox question={question}/>
+                    < QuestionBox question={question} key={question.id}/>
+                ))}
+
+                {display=== 'answered' && answered.map(question => (
+                    < QuestionBox question={question} key={question.id}/>
                 ))}
 
 

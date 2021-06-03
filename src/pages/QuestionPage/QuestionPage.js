@@ -14,14 +14,14 @@ function QuestionPage(){
     const activeUser = useSelector(state => state.activeUser.activeUserReducer)
 
     // Check if question is answered
-    const isAnswered = `${question_id in activeUser.answers}`
+    const isAnswered = question_id in activeUser.answers
 
     // Get the Question
     const question = QuestionData[question_id]
 
     return(
         <div>
-            < QuestionBox question={question} key={question.id} page={isAnswered? 'answeredQuestion' : 'notAnsweredQuestion'}/>
+            < QuestionBox question={question} key={question.id} page={ isAnswered ? 'answeredQuestion' : 'notAnsweredQuestion'}/>
         </div>
     )
 }

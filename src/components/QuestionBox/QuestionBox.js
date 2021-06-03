@@ -22,8 +22,9 @@ function QuestionBox(props){
                 <p>{question.optionOne.text} <span>or</span> {question.optionTwo.text}</p>
             }
 
-            
-                < SelectAnswer />
+            {page === 'notAnsweredQuestion' &&
+                < SelectAnswer question={question}/>
+            }
         </div>
     )
 }

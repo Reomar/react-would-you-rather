@@ -11,7 +11,7 @@ function QuestionBox(props){
     const users = useSelector(state => state.users)
 
     return(
-        <Link className='questionBox-container' to={'/question/'+question.id}>
+        <Link className='questionBox-container' to={'/questions/'+question.id}>
             <div className='questionBox-header'>
                 <img src={img} width='60px'/>
                 <p>{users[question.author].name} asked, Would You Rather...</p>

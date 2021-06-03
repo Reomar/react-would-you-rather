@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchQuestionsAction } from "../../store/actionCreator"
+import  QuestionBox  from '../../components/QuestionBox'
 import './homepage.sass'
 
 function HomePage(){
@@ -49,7 +50,10 @@ function HomePage(){
                     </div>
                 </div>
 
-                <div>Hello</div>
+                {display=== 'notAnswered' && notAnswered.map(question => (
+                    < QuestionBox question={question}/>
+                ))}
+
 
             </div>
         </div>

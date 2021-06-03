@@ -16,7 +16,7 @@ function QuestionBox(props){
                 <p>{users[question.author].name} asked, Would You Rather...</p>
             </div>
 
-            <p>{question.optionOne.text} or {question.optionTwo.text}</p>
+            <p>{question.optionOne.text} <span>or</span> {question.optionTwo.text}</p>
         </div>
     )
 }

@@ -4,6 +4,7 @@ import { useSelector } from "react-redux"
 
 // Pages
 import LoginPage  from './pages/LoginPage'
+import QuestionPage from './pages/QuestionPage'
 
 // Components
 import Navbar from './components/Navbar';
@@ -22,6 +23,10 @@ function App() {
       < Route path="/" exact>
         {!activeUser ?  <LoginPage /> : <HomePage />}
       </ Route>
+
+      < Route path="/questions/:question_id">
+        < QuestionPage />
+      </Route>
     </BrowserRouter>
   );
 }

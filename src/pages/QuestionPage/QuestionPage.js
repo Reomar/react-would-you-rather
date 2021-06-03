@@ -1,11 +1,28 @@
+import { useState } from "react"
+import { useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
 
+import QuestionBox from '../../components/QuestionBox'
+
 function QuestionPage(){
-    let {question_id} = useParams()
+    // Get id from URL params
+    const {question_id} = useParams()
+
+    // Get Question from redux
+    const QuestionData = useSelector(state => state.questions)
+
+    // Get Active User from redux
+    const activeUser = useSelector(state => state.activeUser.activeUserReducer)
+
+    // Check if question is answered
+    const isAnswered = `${question_id in activeUser.answers}`
+
+    // Get the Question
+    const question = QuestionData[question_id]
 
     return(
         <div>
-            This is Question  {question_id}
+            < QuestionBox question={question} key={question.id} page={isAnswered? 'answeredQuestion' : 'notAnsweredQuestion'}/>
         </div>
     )
 }

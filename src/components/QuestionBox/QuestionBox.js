@@ -5,7 +5,7 @@ import './questionBox.sass'
 
 function QuestionBox(props){
     // Question data
-    const {question} = props
+    const {question, page} = props
 
     // Users data from redux
     const users = useSelector(state => state.users)
@@ -17,7 +17,9 @@ function QuestionBox(props){
                 <p>{users[question.author].name} asked, Would You Rather...</p>
             </div>
 
-            <p>{question.optionOne.text} <span>or</span> {question.optionTwo.text}</p>
+            {page === 'home' &&
+                <p>{question.optionOne.text} <span>or</span> {question.optionTwo.text}</p>
+            }
         </Link>
     )
 }

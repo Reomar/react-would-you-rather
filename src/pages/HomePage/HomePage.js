@@ -54,11 +54,11 @@ function HomePage(){
                 </div>
 
                 {display=== 'notAnswered' && notAnswered.map(question => (
-                    < QuestionBox question={question} key={question.id}/>
+                    < QuestionBox question={question} key={question.id} page='home'/>
                 ))}
 
                 {display=== 'answered' && answered.map(question => (
-                    < QuestionBox question={question} key={question.id}/>
+                    < QuestionBox question={question} key={question.id} page='home'/>
                 ))}
 
 

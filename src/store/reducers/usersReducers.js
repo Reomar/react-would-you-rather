@@ -1,4 +1,4 @@
-import { FETCH_USERS, SAVE_ANSWER } from "../actions"
+import { ADD_QUESTION, FETCH_USERS, SAVE_ANSWER } from "../actions"
 
 
 const initialState = {}
@@ -16,6 +16,17 @@ export function usersReducer(state = initialState, action){
                         ...state[action.payload.authedUser].answers,
                         [action.payload.qid]: action.payload.answer
                     }
+                }
+            }
+        case ADD_QUESTION:
+            return {
+                ...state,
+                [action.payload.author]:{
+                    ...state[action.payload.author],
+                    questions: [
+                        ...state[action.payload.author].questions,
+                        action.payload.id
+                    ]
                 }
             }
         default:

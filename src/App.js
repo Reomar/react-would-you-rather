@@ -9,6 +9,7 @@ import QuestionPage from './pages/QuestionPage'
 // Components
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
+import AddQuestionPage from './pages/AddQuestionPage';
 
 function App() {
 
@@ -27,6 +28,11 @@ function App() {
       < Route path="/questions/:question_id">
         < QuestionPage />
       </Route>
+
+      < Route path="/add">
+        < AddQuestionPage />
+      </Route>
+
     </BrowserRouter>
   );
 }

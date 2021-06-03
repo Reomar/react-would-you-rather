@@ -1,4 +1,4 @@
-import { LOGIN_USER, LOGOUT_USER, SAVE_ANSWER } from "../actions";
+import { ADD_QUESTION, LOGIN_USER, LOGOUT_USER, SAVE_ANSWER } from "../actions";
 
 const initialState =  null
 
@@ -15,7 +15,11 @@ export function activeUserReducer (state = initialState, action){
                     ...state.answers,
                     [action.payload.qid]: action.payload.answer
                 }
-                
+            }
+        case ADD_QUESTION:
+            return {
+                ...state,
+                questions:[...state.questions, action.payload.id]
             }
         default:
             return state

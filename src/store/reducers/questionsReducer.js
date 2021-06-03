@@ -1,4 +1,4 @@
-import { FETCH_QUESTIONS, SAVE_ANSWER } from "../actions"
+import { ADD_QUESTION, FETCH_QUESTIONS, SAVE_ANSWER } from "../actions"
 
 const initialState = {}
 
@@ -17,6 +17,15 @@ export function questionsReducer(state = initialState, action){
                         votes: [...state[qid][answer].votes, authedUser]
                     }
                 }
+            }
+
+        case ADD_QUESTION:
+            return {
+                ...state,
+                [action.payload.id]:{
+                    ...action.payload
+                }
+
             }
         default:
             return state

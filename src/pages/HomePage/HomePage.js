@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { fetchQuestionsAction } from "../../store/actionCreator"
 import  QuestionBox  from '../../components/QuestionBox'
 import './homepage.sass'
+import { Link } from "react-router-dom"
 
 function HomePage(){
     const dispatch = useDispatch()
@@ -54,11 +55,15 @@ function HomePage(){
                 </div>
 
                 {display=== 'notAnswered' && notAnswered.map(question => (
-                    < QuestionBox question={question} key={question.id} page='home'/>
+                    <Link to={'/questions/'+question.id}>
+                        < QuestionBox question={question} key={question.id} page='home'/>
+                    </Link>
                 ))}
 
                 {display=== 'answered' && answered.map(question => (
-                    < QuestionBox question={question} key={question.id} page='home'/>
+                    <Link to={'/questions/'+question.id}>
+                        < QuestionBox question={question} key={question.id} page='home'/>
+                    </Link>
                 ))}
 
 

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import './navbar.sass'
 import img from '../../assets/avatars/a1.png'
 import { useDispatch, useSelector } from "react-redux"
@@ -13,6 +13,9 @@ function Navbar(){
         dispatch(logoutAction())
     }
 
+    // Get URL path
+    const location = useLocation().pathname;
+
     return(
         <div className='navbar'>
             <div className='nav-userInfo'>
@@ -22,13 +25,15 @@ function Navbar(){
             </div>
 
             <div className="nav-links">
-                <Link to='/' className='link-item'> Home </ Link>
-                <Link to='/leaderboard' className='link-item'> Leaderboard </Link>
-                <Link to='/add' className='link-item'>New Question</Link>
+                <Link to='/' className={(location === '/' ? 'active' : '' )+ ' link-item'}> Home </ Link>
+                <Link to='/leaderboard' className={(location === '/leaderboard' ? 'active' : '' )+ ' link-item'}> Leaderboard </Link>
+                <Link to='/add' className={(location === '/add' ? 'active' : '' )+ ' link-item'}>New Question</Link>
             </div>
 
-            <Link className='logout-button' to='/' onClick={handleLogout}>
-                Logout
+            <Link className='remove-deco' to='/' onClick={handleLogout}>
+                <div className='logout-button'>
+                    Logout
+                </div>
             </Link>
 
 

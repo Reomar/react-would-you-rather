@@ -18,7 +18,6 @@ function Navbar(){
     return(
         <div className='navbar'>
             <div className='nav-userInfo'>
-                {/* FIXME : fix img path in _data   */}
                 <img className='nav-avatar' src={activeUser.avatarURL} alt='user avatar'/>
                 <p>hello, {activeUser.name}</p>
             </div>

@@ -11,6 +11,7 @@ import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import AddQuestionPage from './pages/AddQuestionPage';
 import NotFoundPage from './pages/NotFoundPage';
+import Leaderboard from './pages/LeaderboardPage/Leaderboard';
 
 function App() {
 
@@ -36,8 +37,11 @@ function App() {
             < Route path="/add">
               < AddQuestionPage />
             </Route>
+            < Route path="/leaderboard">
+              < Leaderboard />
+            </Route>
           </Switch>
-          
+
           : <Route path="*">
               < NotFoundPage />
             </Route>

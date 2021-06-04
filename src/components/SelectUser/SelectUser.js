@@ -23,7 +23,7 @@ const SelectUser = () => {
 
     // Format the userData to be added in the select
     const options = Object.keys(usersData).map(user =>({
-                        value:usersData[user].id, label: <div><img src={usersData[user].avatarURL} height="30px" width="30px"/> {usersData[user].name} </div>
+                        value:usersData[user].id, label: <div><img alt='user avatar' src={usersData[user].avatarURL} height="30px" width="30px"/> {usersData[user].name} </div>
                     }))
 
     // Handle selecting user from select

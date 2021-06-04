@@ -6,7 +6,7 @@ function LoginPage(){
     return(
         <div className='login-Container'>
             <h1 className='would-you-rather'>Would You Rather?</h1>
-            <img src={logo} className='login-logo'/>
+            <img src={logo} className='login-logo' alt='app logo'/>
 
             {/* TODO finish the select user component*/}
             < SelectUser />

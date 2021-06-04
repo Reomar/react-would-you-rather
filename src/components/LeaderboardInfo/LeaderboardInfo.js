@@ -6,7 +6,7 @@ function LeaderboardInfo(props){
     return (
         <div className='Info-container'>
             <div className='info-user'>
-                <img src={usr.avatar}/>
+                <img src={usr.avatar} alt='user avatar'/>
                 <p className='buttomP'>{usr.name}</p>
             </div>
 

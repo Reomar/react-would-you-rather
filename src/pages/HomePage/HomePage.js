@@ -60,16 +60,16 @@ function HomePage(){
                 }
 
                 {display=== 'notAnswered' && notAnswered.map(question => (
-                    <Link to={'/questions/'+question.id} className='remove-deco'>
-                        < QuestionBox question={question} key={question.id} page='home'/>
+                    <Link to={'/questions/'+question.id} className='remove-deco' key={question.id}>
+                        < QuestionBox question={question}  page='home'/>
                     </Link>
                 ))}
 
                 {display=== 'answered' && (
                     !answered.length && <h3 className='feedback-text'>Nothing is answered 💔</h3> ||
                     answered.map(question => (
-                        <Link to={'/questions/'+question.id} className='remove-deco'>
-                            < QuestionBox question={question} key={question.id} page='home'/>
+                        <Link to={'/questions/'+question.id} className='remove-deco' key={question.id}>
+                            < QuestionBox question={question}  page='home'/>
                         </Link>
                     ))
                 )

@@ -17,7 +17,6 @@ function App() {
 
   // Get Active User
   const activeUser = useSelector((state) => state.activeUser)
-  console.log(activeUser)
 
   return (
     <BrowserRouter>

@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom"
 import './navbar.sass'
-import img from '../../assets/avatars/a1.png'
 import { useDispatch, useSelector } from "react-redux"
 import { logoutAction } from "../../store/actionCreator"
 
@@ -20,7 +19,7 @@ function Navbar(){
         <div className='navbar'>
             <div className='nav-userInfo'>
                 {/* FIXME : fix img path in _data   */}
-                <img className='nav-avatar' src={img}/>
+                <img className='nav-avatar' src={activeUser.avatarURL}/>
                 <p>hello, {activeUser.name}</p>
             </div>
 

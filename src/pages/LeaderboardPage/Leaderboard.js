@@ -18,7 +18,6 @@ function Leaderboard(){
 
     // sort leaderboard
     const sortedLeaderboard = leaderboardData.sort((a, b) => (a.score > b.score) ? -1 : 1)
-    console.log(sortedLeaderboard)
     return(
         <div className='leaderboard-container'>
             {sortedLeaderboard.map((user) => (

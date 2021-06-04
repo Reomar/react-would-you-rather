@@ -1,4 +1,3 @@
-import img from '../../assets/avatars/a2.png'
 import './leaderboardInfo.sass'
 
 function LeaderboardInfo(props){
@@ -7,7 +6,7 @@ function LeaderboardInfo(props){
     return (
         <div className='Info-container'>
             <div className='info-user'>
-                <img src={img} />
+                <img src={usr.avatar}/>
                 <p className='buttomP'>{usr.name}</p>
             </div>
 

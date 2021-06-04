@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import img from '../../assets/avatars/a1.png'
 import SelectAnswer from '../SelectAnswer/SelectAnswer'
 import './questionBox.sass'
 import Votes  from '../Votes'
@@ -15,7 +14,7 @@ function QuestionBox(props){
     return(
         <div className='questionBox-container remove-deco' >
             <div className='questionBox-header'>
-                <img src={img} width='60px'/>
+                <img src={users[question.author].avatarURL} width='60px'/>
                 <p>{users[question.author].name} asked, Would You Rather...</p>
             </div>
 

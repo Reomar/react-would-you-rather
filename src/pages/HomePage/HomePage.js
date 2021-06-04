@@ -65,14 +65,12 @@ function HomePage(){
                     </Link>
                 ))}
 
-                {display=== 'answered' && (
-                    !answered.length && <h3 className='feedback-text'>Nothing is answered 💔</h3> ||
+                {display=== 'answered' && 
                     answered.map(question => (
                         <Link to={'/questions/'+question.id} className='remove-deco' key={question.id}>
                             < QuestionBox question={question}  page='home'/>
                         </Link>
                     ))
-                )
                 }
 
 

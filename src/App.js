@@ -1,4 +1,4 @@
-import { Route } from 'react-router';
+import { Route, Switch } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import { useSelector } from "react-redux"
 
@@ -10,6 +10,7 @@ import QuestionPage from './pages/QuestionPage'
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import AddQuestionPage from './pages/AddQuestionPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
 
@@ -21,17 +22,27 @@ function App() {
     <BrowserRouter>
       {activeUser && <Navbar />}
 
-      < Route path="/" exact>
-        {!activeUser ?  <LoginPage /> : <HomePage />}
-      </ Route>
+      <Switch>
+        < Route path="/" exact>
+          {!activeUser ?  <LoginPage /> : <HomePage />}
+        </ Route>
 
-      < Route path="/questions/:question_id">
-        < QuestionPage />
-      </Route>
-
-      < Route path="/add">
-        < AddQuestionPage />
-      </Route>
+        {
+          activeUser ?
+          < Switch>
+            < Route path="/questions/:question_id">
+              < QuestionPage />
+            </Route>
+            < Route path="/add">
+              < AddQuestionPage />
+            </Route>
+          </Switch>
+          
+          : <Route path="*">
+              < NotFoundPage />
+            </Route>
+        }
+      </Switch>
 
     </BrowserRouter>
   );

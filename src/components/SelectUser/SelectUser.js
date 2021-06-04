@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { fetchUsersAction, loginAction } from "../../store/actionCreator"
 import Select from 'react-select';
 import { Link } from "react-router-dom";
-
+import './selectUser.sass'
 
 
 const SelectUser = () => {
@@ -37,17 +37,26 @@ const SelectUser = () => {
     }
 
     return (
-        <div>
+        <div className='select-container'>
             <p>Login to continue</p>
-            {/* TODO Add icon beside the name */}
             <Select
                 options={options}
                 onChange={(evt) => handleSelect(evt.value)}
                 placeholder={"Select User..."}
+                theme={ theme => ({
+                    ...theme,
+                    borderRadius: '7px',
+                    colors:{
+                        ...theme.colors,
+                        primary: '#151e3f'
+                    }
+                })}
             />
 
-            <Link to='/' onClick={handleLoginButton} >
-                login
+            <Link  to='/' onClick={handleLoginButton} className='remove-deco' >
+                <div className='accent-button'>
+                    login
+                </div>
             </Link>
 
         </div>

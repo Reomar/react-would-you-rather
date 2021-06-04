@@ -7,7 +7,7 @@
     width: 100%
     border-bottom: 3px solid $space-blue
     justify-content: space-between
-    align-items: baseline
+    align-items: center
     padding: 10px 0
 
     .nav-userInfo
@@ -15,23 +15,33 @@
         margin-left: 1.5rem
         display: flex
         flex-direction: row
-        align-items: baseline
+        align-items: center
 
 
         .nav-avatar
-            width: 30px
+            width: 25px
+            margin-right: 9px
 
     .nav-links
         align-self: center
+        display: flex
+
+        .link-item
+            &:hover
+                border-bottom: 3px solid #ffdf86
+
+        .active
+            border-bottom: 3px solid $sunglow-yellow
+
 
     .logout-button
+        text-align: center
         align-self: flex-end
         margin-right: 1.5rem
         background-color: $coral-red
         color: #fff
-        text-decoration: none
         font-size: 14px
-        padding: 0 10px
+        padding: 4px 10px
         border-radius: $radius
 
 

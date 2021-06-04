@@ -13,7 +13,7 @@ function QuestionBox(props){
     const users = useSelector(state => state.users)
 
     return(
-        <div className='questionBox-container' >
+        <div className='questionBox-container remove-deco' >
             <div className='questionBox-header'>
                 <img src={img} width='60px'/>
                 <p>{users[question.author].name} asked, Would You Rather...</p>

@@ -1,20 +1,15 @@
 import { useState } from "react"
-import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { fetchQuestionsAction } from "../../store/actionCreator"
+import { useSelector } from "react-redux"
 import  QuestionBox  from '../../components/QuestionBox'
 import './homepage.sass'
 import { Link } from "react-router-dom"
 
 function HomePage(){
-    const dispatch = useDispatch()
-
     // Selected questions internal state
     const [display, setDisplay] = useState('notAnswered')
 
     // Get questions data from redux store
     const questionsData = useSelector(state => state.questions)
-    console.log(questionsData)
 
     // Get user data from redux store
     const activeUser = useSelector(state => state.activeUser)

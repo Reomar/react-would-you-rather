@@ -21,10 +21,10 @@ export function questionsReducer(state = initialState, action){
 
         case ADD_QUESTION:
             return {
-                ...state,
                 [action.payload.id]:{
                     ...action.payload
-                }
+                },
+                ...state,
 
             }
         default:

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchUsersAction, loginAction } from "../../store/actionCreator"
 import Select from 'react-select';
-import { Link } from "react-router-dom";
 import './selectUser.sass'
 
 

@@ -1,6 +1,6 @@
-import { useSelector } from "react-redux"
-import { useParams } from "react-router-dom"
-
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { Redirect, useParams } from "react-router-dom"
 import QuestionBox from '../../components/QuestionBox'
 
 function QuestionPage(){
@@ -19,9 +19,13 @@ function QuestionPage(){
     // Get the Question
     const question = QuestionData[question_id]
 
+    if(!question){
+        return < Redirect to="/not-found" />
+    }
+
     return(
         <div>
-            < QuestionBox question={question} key={question.id} page={ isAnswered ? 'answeredQuestion' : 'notAnsweredQuestion'}/>
+            < QuestionBox question={question} key={question_id} page={ isAnswered ? 'answeredQuestion' : 'notAnsweredQuestion'}/>
         </div>
     )
 }

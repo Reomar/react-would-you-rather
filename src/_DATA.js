@@ -31,6 +31,13 @@ let users = {
       "6ni6ok3ym7mf1p33lnez": 'optionTwo'
     },
     questions: ['6ni6ok3ym7mf1p33lnez', 'xj352vofupe1dqz9emx13r'],
+  },
+  McFadden: {
+    id: 'McFadden',
+    name: 'Kevin B. McFadden',
+    avatarURL: '/avatars/a4.png',
+    answers: {},
+    questions:[],
   }
 }
 

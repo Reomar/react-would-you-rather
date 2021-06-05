@@ -53,11 +53,11 @@ const SelectUser = () => {
                 })}
             />
 
-            <Link  to='/' onClick={handleLoginButton} className='remove-deco' >
+            <div  onClick={handleLoginButton} className='remove-deco' >
                 <div className='accent-button'>
                     login
                 </div>
-            </Link>
+            </div>
 
         </div>
     )

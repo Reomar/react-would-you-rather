@@ -22,29 +22,32 @@ function App() {
     <BrowserRouter>
       {activeUser && <Navbar />}
 
-      <Switch>
+      < Switch>
+        {!activeUser &&
+          < Route path="/" >
+             <LoginPage />
+          </ Route>
+        }
         < Route path="/" exact>
-          {!activeUser ?  <LoginPage /> : <HomePage />}
+          {!!activeUser  && <HomePage />}
         </ Route>
 
-        {
-          activeUser ?
-          < Switch>
-            < Route path="/questions/:question_id">
-              < QuestionPage />
-            </Route>
-            < Route path="/add">
-              < AddQuestionPage />
-            </Route>
-            < Route path="/leaderboard">
-              < Leaderboard />
-            </Route>
-          </Switch>
+        < Route path="/add">
+          < AddQuestionPage />
+        </Route>
 
-          : <Route path="*">
-              < NotFoundPage />
-            </Route>
-        }
+        < Route path="/leaderboard">
+          < Leaderboard />
+        </Route>
+
+        < Route path="/questions/:question_id">
+          < QuestionPage />
+        </Route>
+
+        <Route path="*">
+            < NotFoundPage />
+        </Route>
+        
       </Switch>
 
     </BrowserRouter>

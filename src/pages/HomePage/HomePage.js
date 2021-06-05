@@ -12,13 +12,9 @@ function HomePage(){
     // Selected questions internal state
     const [display, setDisplay] = useState('notAnswered')
 
-    // Get Questions from API
-    useEffect(()=>{
-        dispatch(fetchQuestionsAction())
-    })
-
     // Get questions data from redux store
     const questionsData = useSelector(state => state.questions)
+    console.log(questionsData)
 
     // Get user data from redux store
     const activeUser = useSelector(state => state.activeUser)

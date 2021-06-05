@@ -1,9 +1,9 @@
 # Udacity Ract would you rather project
 
 
-This is the third poject of Udacity react nanodegree.
+This is the third project of Udacity react nanodegree.
 
-**Would you rather** lets a user play the  famous “Would You Rather?” game. The game goes like this: 
+**Would you rather** lets a user play the famous “Would You Rather?” game. The game goes like this: 
 
 > A user is asked a question in the form: “Would you rather [_option A_]
 > or [_option B_] ?”.
@@ -18,7 +18,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   ## Get Stated
 
  1. run `yarn` or  `npm i` to install needed dependencies
- 2. run `yarn start` to open project in development mode
+ 2. run `yarn start` to open the project in development mode
 
 
 ## Available Scripts
